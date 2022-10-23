@@ -31,7 +31,7 @@ async def handle_interactions(event: hikari.InteractionCreateEvent) -> None:
     if event.interaction.command_name == "ping":
         await event.interaction.create_initial_response(
             hikari.ResponseType.MESSAGE_CREATE,
-            f"Pong! {bot.heartbeat_latency * 1_000:.0f}ms",
+            f"Pong! {bot.heartbeat_latency * 1_000:.0f}ms.",
         )
 
 
@@ -53,7 +53,7 @@ async def on_message(event: hikari.MessageCreateEvent) -> None:
         return
 
     if event.content == f"<@{me.id}> ping":
-        await event.message.respond(f"Pong! {bot.heartbeat_latency * 1_000:.0f}ms")
+        await event.message.respond(f"Pong! {bot.heartbeat_latency * 1_000:.0f}ms.")
 
 
 bot.run()
