@@ -1,0 +1,5 @@
+hikari[speedups,server]==2.0.0.dev111
+hikari-crescent==0.3.6
+hikari-lightbulb==2.2.4
+hikari-tanjun==2.8.0a1
+python-dotenv==0.21.0
