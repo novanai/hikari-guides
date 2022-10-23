@@ -46,7 +46,13 @@ async def on_message(event: hikari.MessageCreateEvent) -> None:
         # The message does not contain any content
         return
 
-    if event.content == "!ping":
+    me = bot.get_me()
+    if not me:
+        # get_me() will not be available before hikari.StartingEvent
+        # has been fired, but should always be available after that
+        return
+
+    if event.content == f"<@{me.id}> ping":
         await event.message.respond(f"Pong! {bot.heartbeat_latency * 1_000:.0f}ms")
 
 
